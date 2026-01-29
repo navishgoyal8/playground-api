@@ -2,7 +2,7 @@
 
 This project is a simple **API Playground** that stores my **candidate profile information** in a database and exposes it via a REST API along with a minimal frontend UI to run queries.
 
-✅ Tech Stack:
+## ✅ Tech Stack:
 - **Backend:** Node.js + Express.js
 - **Database:** MongoDB (Mongoose)
 - **Frontend:** React (Vite)
@@ -68,7 +68,7 @@ api-playground-mern/
     .env
     package.json
 README.md
-postman_collection.json
+postman_collection.json```
 
 ✅ API Endpoints
 ✅ Liveness
