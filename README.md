@@ -75,7 +75,7 @@ postman_collection.json
 ## ✅ Liveness
 GET /health
 
-Returns 200 response if API is running.
+**Returns 200 response if API is running.**
 
 Example response:
 ```bash 
@@ -85,26 +85,27 @@ Example response:
 }
 ```
 
-✅ Profile CRUD
-✅ POST /profile (Protected - Optional)
+## ✅ Profile CRUD
+### ✅ POST /profile (Protected - Optional)
 
 Creates a new profile.
 
-📌 Header required (optional feature):
-
+**📌 Header required (optional feature):**
+```bash
 x-api-key: navish-secret-key
-
-✅ GET /profile
+```
+### ✅ GET /profile
 
 Fetches the stored candidate profile.
 
-✅ PUT /profile/:id (Protected - Optional)
+### ✅ PUT /profile/:id (Protected - Optional)
 
 Updates a profile by MongoDB ID.
 
-📌 Header required (optional feature):
-
+**📌 Header required (optional feature):**
+```bash
 x-api-key: navish-secret-key
+```
 
 ✅ Query Endpoints
 ✅ GET /projects?skill=python
@@ -123,59 +124,47 @@ Returns all skills and total count.
 ✅ GET /search?q=mern
 
 Search across:
+- Skills
+- Projects
+- Education
+- Work
 
-skills
-
-projects
-
-education
-
-work
-
-✅ Database Schema (MongoDB)
+## ✅ Database Schema (MongoDB)
 
 The profile contains the following fields:
 
-name (string)
+- name (string)
+- email (string, unique)
+- education (array of strings)
+- skills (array of strings)
+- projects (array of objects)
+- title (string)
+- description (string)
+- links (array of strings)
+- work (array of strings)
+- links (object)
+- github
+- linkedin
+- portfolio
 
-email (string, unique)
+**📌 Note: email is unique, so creating a profile with the same email again will throw a duplicate key error.**
 
-education (array of strings)
-
-skills (array of strings)
-
-projects (array of objects)
-
-title (string)
-
-description (string)
-
-links (array of strings)
-
-work (array of strings)
-
-links (object)
-
-github
-
-linkedin
-
-portfolio
-
-📌 Note: email is unique, so creating a profile with the same email again will throw a duplicate key error.
-
-✅ Local Setup Instructions
-✅ 1) Clone Repo
-git clone <YOUR_REPO_URL>
+## ✅ Local Setup Instructions
+### ✅ 1) Clone Repo
+```bash
+git clone https://github.com/navishgoyal8/playground-api
 cd api-playground-mern
+```
 
-✅ 2) Backend Setup
+### ✅ 2) Backend Setup
 Install dependencies
+```bash
 cd backend
 npm install
+```
 
-Create .env file in backend/
-MONGO_URI=mongodb://127.0.0.1:27017/api_playground
+### Create .env file in backend/
+MONGO_URI=
 PORT=5000
 API_KEY=navish-secret-key
 
