@@ -68,19 +68,22 @@ api-playground-mern/
     .env
     package.json
 README.md
-postman_collection.json```
+postman_collection.json
+```
 
-✅ API Endpoints
-✅ Liveness
+# ✅ API Endpoints
+## ✅ Liveness
 GET /health
 
 Returns 200 response if API is running.
 
 Example response:
+```bash 
 {
   "status": "ok",
   "message": "API is live ✅"
 }
+```
 
 ✅ Profile CRUD
 ✅ POST /profile (Protected - Optional)
