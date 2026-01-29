@@ -1,4 +1,4 @@
-# API Playground (Backend Assessment) - Ontoborn Technologies LLC
+# API Playground (Backend Assessment)
 
 This project is a simple **API Playground** that stores my **candidate profile information** in a database and exposes it via a REST API along with a minimal frontend UI to run queries.
 
@@ -107,45 +107,45 @@ Updates a profile by MongoDB ID.
 x-api-key: navish-secret-key
 ```
 
-✅ Query Endpoints
-✅ GET /projects?skill=python
+## ✅ Query Endpoints
+### ✅ GET /projects?skill=python
 
 Returns projects filtered by keyword (title/description).
 
-✅ Optional Pagination supported:
+### ✅ Optional Pagination supported:
 
 GET /projects?page=1&limit=2
 GET /projects?skill=expense&page=1&limit=1
 
-✅ GET /skills/top
+### ✅ GET /skills/top
 
 Returns all skills and total count.
 
-✅ GET /search?q=mern
+### ✅ GET /search?q=mern
 
 Search across:
-- Skills
-- Projects
-- Education
-- Work
+- **Skills**
+- **Projects**
+- **Education**
+- **Work**
 
 ## ✅ Database Schema (MongoDB)
 
 The profile contains the following fields:
 
-- name (string)
-- email (string, unique)
-- education (array of strings)
-- skills (array of strings)
-- projects (array of objects)
-- title (string)
-- description (string)
-- links (array of strings)
-- work (array of strings)
-- links (object)
-- github
-- linkedin
-- portfolio
+- **name (string)**
+- **email (string, unique)**
+- **education (array of strings)**
+- **skills (array of strings)**
+- **projects (array of objects)**
+- **title (string)**
+- **description (string)**
+- **links (array of strings)**
+- **work (array of strings)**
+- **links (object)**
+- **github**
+- **linkedin**
+- **portfolio**
 
 **📌 Note: email is unique, so creating a profile with the same email again will throw a duplicate key error.**
 
@@ -163,139 +163,129 @@ cd backend
 npm install
 ```
 
-### Create .env file in backend/
-MONGO_URI=
+#### Create .env file in backend/
+```bash
+MONGO_URI=mongodb+srv://navishgoyal48:navishng@cluster0.ses1wu1.mongodb.net/?appName=Cluster0
 PORT=5000
 API_KEY=navish-secret-key
+```
 
-Run backend
+#### Run backend
+```bash
 npm run dev
+```
 
+#### Backend runs on:
+**✅ http://localhost:5000**
 
-Backend runs on:
-✅ http://localhost:5000
-
-✅ 3) Seed Database
+### ✅ 3) Seed Database
 
 This inserts the candidate profile data into MongoDB.
-
+```bash
 cd backend
 npm run seed
+```
 
-✅ 4) Frontend Setup
+### ✅ 4) Frontend Setup
 Install dependencies
+```bash
 cd frontend
 npm install
+```
 
-Create .env file in frontend/
+#### Create .env file in frontend/
+```bash
 VITE_API_URL=http://localhost:5000
+```
 
-Run frontend
+#### Run frontend
+```bash
 npm run dev
+```
 
 
 Frontend runs on:
-✅ http://localhost:5173
+**✅ http://localhost:5173**
 
-✅ Sample cURL Requests
-Health Check
+## ✅ Sample cURL Requests
+### Health Check
 curl http://localhost:5000/health
 
-Get Profile
+### Get Profile
 curl http://localhost:5000/profile
 
-Filter Projects
+### Filter Projects
 curl "http://localhost:5000/projects?skill=expense"
 
-Pagination Example
+### Pagination Example
 curl "http://localhost:5000/projects?page=1&limit=1"
 
-Skills
+### Skills
 curl http://localhost:5000/skills/top
 
-Search
+### Search
 curl "http://localhost:5000/search?q=react"
 
-✅ Postman Collection
 
-A Postman collection is included:
 
-📌 postman_collection.json
+## ✅ Optional Features Implemented
 
-✅ Import Steps:
+## ✅ Basic Auth for write operations
 
-Open Postman
-
-Click Import
-
-Select postman_collection.json
-
-Use variable:
-
-BASE_URL = http://localhost:5000
-
-API_KEY = navish-secret-key
-
-✅ Optional Features Implemented
-
-✅ Basic Auth for write operations
-
-POST /profile and PUT /profile/:id require:
-
+### POST /profile and PUT /profile/:id require:
+```bash
 x-api-key: navish-secret-key
+```
 
-
-✅ Logging
+### ✅ Logging
 
 Morgan middleware logs each request in backend terminal.
 
-✅ Rate Limiting
+### ✅ Rate Limiting
 
 Rate limit enabled to prevent abuse.
 
-✅ Pagination
+### ✅ Pagination
 
 Added pagination support to /projects endpoint.
 
-✅ Basic Tests
+### ✅ Basic Tests
 
 Jest + Supertest tests added for /health.
 
-✅ How to Verify Optional Features
-✅ Auth Check
+### ✅ How to Verify Optional Features
+### ✅ Auth Check
 
 Without API key → 401 Unauthorized
 
 With API key → request succeeds
 
-✅ Pagination Check
+### ✅ Pagination Check
 GET /projects?page=1&limit=1
 
 
 Returns paginated response.
 
-✅ Rate Limit Check
+### ✅ Rate Limit Check
 
 Sending too many requests returns 429 Too Many Requests.
 
-✅ Tests
+### ✅ Tests
+
+```bash
 cd backend
 npm test
+```
 
-✅ Known Limitations
+## ✅ Known Limitations
 
-This project assumes a single candidate profile for simplicity.
+- This project assumes a single candidate profile for simplicity.
+- Search is keyword-based substring match (not full-text search).
+- UI is minimal as per assignment requirement.
 
-Search is keyword-based substring match (not full-text search).
+## ✅ Author
 
-UI is minimal as per assignment requirement.
-
-✅ Author
-
-Navish Goyal
-
-Email: goyalnavish125@gmail.com
-
-GitHub: <PASTE_GITHUB_LINK_HERE>
-
-LinkedIn: <PASTE_LINKEDIN_LINK_HERE>
+**Navish Goyal**
+**Email: goyalnavish125@gmail.com**
+**GitHub: https://github.com/navishgoyal8**
+**LinkedIn: https://www.linkedin.com/in/navish-goyal-b40667224/**
