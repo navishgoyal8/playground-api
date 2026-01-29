@@ -285,7 +285,7 @@ npm test
 
 ## ✅ Author
 
-**Navish Goyal**
-**Email: goyalnavish125@gmail.com**
-**GitHub: https://github.com/navishgoyal8**
+**Navish Goyal**\n
+**Email: goyalnavish125@gmail.com**\n
+**GitHub: https://github.com/navishgoyal8**\n
 **LinkedIn: https://www.linkedin.com/in/navish-goyal-b40667224/**
